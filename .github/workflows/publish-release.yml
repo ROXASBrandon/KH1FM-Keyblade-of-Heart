@@ -1,0 +1,69 @@
+name: Publish OpenKH ZIP Release
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-release.yml
+      - downloads/Keyblade-of-Heart.zip
+      - downloads/Keyblade-of-Heart-SHA256SUMS.txt
+permissions:
+  contents: write
+concurrency:
+  group: publish-openkh-release
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Verify ZIP, attach assets, and publish GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import os, json, hashlib, urllib.request, urllib.error, urllib.parse
+          META = {'tag': 'v0.1.5', 'name': 'Keyblade of Heart', 'prerelease': False, 'archive': 'Keyblade-of-Heart.zip', 'checksum': 'Keyblade-of-Heart-SHA256SUMS.txt', 'zip_sha256': '27a12d04e2a1771d2298ae90f0f10149c5392e460c12ba48d738e2faeb11dcd7', 'body': 'Keyblade of Heart — author-tested OpenKH ZIP. Compatible with Keyblade Transmog. Tested independently and together through Build and Run. Download the mod ZIP below; import it into OpenKH Mods Manager without extracting, enable it, and use Build and Run. Close KH1 normally before updating.'}
+          repo = os.environ['GITHUB_REPOSITORY']
+          sha = os.environ['GITHUB_SHA']
+          token = os.environ['GH_TOKEN']
+          api = 'https://api.github.com/repos/'+repo
+          headers = {'Authorization': 'Bearer '+token, 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'OpenKH-Mod-Release'}
+          def request(url, method='GET', data=None, content_type='application/json'):
+              payload = json.dumps(data).encode() if isinstance(data, dict) else data
+              req = urllib.request.Request(url, data=payload, method=method, headers={**headers, 'Content-Type': content_type})
+              with urllib.request.urlopen(req, timeout=120) as response:
+                  return json.load(response)
+          def raw(name):
+              url = 'https://raw.githubusercontent.com/'+repo+'/'+sha+'/downloads/'+urllib.parse.quote(name)
+              with urllib.request.urlopen(url, timeout=120) as response:
+                  return response.read()
+          zip_data = raw(META['archive'])
+          assert hashlib.sha256(zip_data).hexdigest() == META['zip_sha256'], 'ZIP checksum mismatch'
+          checksum_data = raw(META['checksum'])
+          assert (META['zip_sha256']+'  '+META['archive']).encode() in checksum_data, 'Checksum file mismatch'
+          try:
+              release = request(api+'/releases/tags/'+META['tag'])
+          except urllib.error.HTTPError as error:
+              if error.code != 404:
+                  raise
+              release = request(api+'/releases', 'POST', {'tag_name': META['tag'], 'target_commitish': sha, 'name': META['name'], 'body': META['body'], 'draft': True, 'prerelease': META['prerelease'], 'make_latest': 'true'})
+          existing = {asset['name']: asset for asset in release.get('assets', [])}
+          for name, data, kind in [(META['archive'], zip_data, 'application/zip'), (META['checksum'], checksum_data, 'text/plain')]:
+              digest = 'sha256:'+hashlib.sha256(data).hexdigest()
+              if name in existing:
+                  asset = existing[name]
+                  assert asset['state'] == 'uploaded' and asset['size'] == len(data) and asset.get('digest') == digest, 'Existing asset differs; refusing replacement'
+                  continue
+              assert release['draft'], 'Published release is missing an asset; refusing to modify it'
+              url = release['upload_url'].split('{', 1)[0]+'?'+urllib.parse.urlencode({'name': name})
+              asset = request(url, 'POST', data, kind)
+              assert asset['state'] == 'uploaded' and asset['size'] == len(data), 'Incomplete upload'
+              assert asset.get('digest') == digest, 'Uploaded asset checksum mismatch'
+          if release['draft']:
+              release = request(api+'/releases/'+str(release['id']), 'PATCH', {'draft': False, 'name': META['name'], 'body': META['body'], 'prerelease': META['prerelease'], 'make_latest': 'true'})
+          assert not release['draft']
+          print('Published '+release['html_url'])
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('## Release published\n'+release['html_url']+'\n\nZIP SHA256: `'+META['zip_sha256']+'`\n')
+          PY

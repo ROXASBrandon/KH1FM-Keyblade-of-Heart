@@ -1,0 +1,48 @@
+title: Keyblade of Heart over Kingdom Key
+originalAuthor: ROXASBrandon
+game: kh1
+description: >
+  Replaces Kingdom Key with Riku's Keyblade of Heart model, dark blue swing trail,
+  and swing sounds. Keeps weapon stats, abilities, and Sora's animations.
+  Compatible with Keyblade Transmog.
+assets:
+  - name: xw_ex_5010.wpn
+    method: copy
+    source:
+      - name: generated/xw_ex_5010.wpn
+  - name: remastered/xw_ex_5010.wpn/-9a40.cvbl
+    method: copy
+    source:
+      - name: generated/remastered/xw_ex_5010.wpn/-9a40.cvbl
+  - name: remastered/xw_ex_5010.wpn/-9b40.dds
+    method: copy
+    source:
+      - name: generated/remastered/xw_ex_5010.wpn/-9b40.dds
+  - name: remastered/xw_ex_5010.wpn/-12300.dds
+    method: copy
+    source:
+      - name: generated/remastered/xw_ex_5010.wpn/-12300.dds
+  - name: remastered/xw_ex_5010.wpn/-4310.dds
+    method: copy
+    source:
+      - name: generated/remastered/xw_ex_5010.wpn/-4310.dds
+  - name: remastered/xw_ex_5010.se/se011018.win32.scd
+    method: copy
+    source:
+      - name: generated/remastered/xw_ex_5010.se/se011018.win32.scd
+  - name: remastered/xw_ex_5010.se/se011019.win32.scd
+    method: copy
+    source:
+      - name: generated/remastered/xw_ex_5010.se/se011019.win32.scd
+  - name: remastered/xw_ex_5010.se/se011020.win32.scd
+    method: copy
+    source:
+      - name: generated/remastered/xw_ex_5010.se/se011020.win32.scd
+  - name: remastered/xw_ex_5010.se/se011021.win32.scd
+    method: copy
+    source:
+      - name: generated/remastered/xw_ex_5010.se/se011021.win32.scd
+  - name: remastered/xw_ex_5010.se/se011022.win32.scd
+    method: copy
+    source:
+      - name: generated/remastered/xw_ex_5010.se/se011022.win32.scd

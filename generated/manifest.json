@@ -1,0 +1,61 @@
+{
+  "version": "0.1.5-preview",
+  "source_model": "xa_ex_1580.mdls",
+  "source_mesh": 7,
+  "legacy_vertices": 610,
+  "hd_vertices": 426,
+  "bone_remap": {
+    "211": 2
+  },
+  "swing_map": {
+    "11018": 8245,
+    "11019": 8246,
+    "11020": 8247,
+    "11021": 8248,
+    "11022": 8245
+  },
+  "trail": "Riku texture, neutral tint, initial opacity and alpha blend in Sora trail",
+  "trail_blend": {
+    "offset": 34150,
+    "original": 72,
+    "replacement": 68
+  },
+  "trail_rgb_offsets": [
+    15172,
+    15184,
+    15196,
+    15744,
+    15756,
+    15768,
+    16304,
+    16316,
+    16328
+  ],
+  "hit_audio": "vanilla material-specific hit sounds retained",
+  "inputs": {
+    "xw_ex_5010.wpn": "4df53441a13da6712e24d618d16abeee3ad5b06e8580a6deaf670eb31b88e0ef",
+    "xa_ex_1580.mdls": "19f45af3284e9199d0b50381d6c97e4f1d5ee5689744e4876167da2b6b4d7867",
+    "xa_ex_1580.mset": "aae538c505f1177a3c4f12627c4b6dd457e004267b8d18341706334af8cd98b5",
+    "remastered/xa_ex_1580.mdls/-c0.cvbl": "b724b31938805f4ce450f0041f574ffee3f4ad21e9158391d394a504e2dc72c6",
+    "remastered/xa_ex_1580.mdls/-1c6.dds": "2447695158b7e9f163b42a7355a97f7da35e00752a775a49fce66ba9614bc7c4",
+    "remastered/xa_ex_1580.mdls/-80680.dds": "2447695158b7e9f163b42a7355a97f7da35e00752a775a49fce66ba9614bc7c4",
+    "remastered/xa_ex_1580.mdls/-86c60.dds": "87a118af57aa1050ef179e3c56ed807946e66e3450b2f52c0b06098aacade0d6",
+    "remastered/xa_ex_1580.mdls/se008245.win32.scd": "b09d94263ffea062012f59c9393910d4f356500c2a334dbc3f762cbebb0a52b6",
+    "remastered/xa_ex_1580.mdls/se008246.win32.scd": "89b736b3f2e74f45a043465f6938c2c01268e318f85a1db44f47135326c5db80",
+    "remastered/xa_ex_1580.mdls/se008247.win32.scd": "d108dabbd912a97802f324867109cf5f70504d41dd3a107f0eeaa93b6d2981f8",
+    "remastered/xa_ex_1580.mdls/se008248.win32.scd": "1236061c066375985b7f0bfc65872fef8888291f1d14103c30f9987d6c424524",
+    "remastered/xw_ex_5010.wpn/-4310.dds": "2e8b5edf48c42f86631083182ec461e99833d9c04234a5a8d571e29be40c5440"
+  },
+  "payload": {
+    "xw_ex_5010.wpn": "a3f7cf5182a48dd83a696c852dbc586dd061d1dd0825c234ff734e178b0f6025",
+    "remastered/xw_ex_5010.wpn/-9a40.cvbl": "0cbfab13cfea78787eb04d13b2bbf2cc0b2ce9c29ca8c52fee1aca6eb3ff89df",
+    "remastered/xw_ex_5010.wpn/-9b40.dds": "2447695158b7e9f163b42a7355a97f7da35e00752a775a49fce66ba9614bc7c4",
+    "remastered/xw_ex_5010.wpn/-12300.dds": "2447695158b7e9f163b42a7355a97f7da35e00752a775a49fce66ba9614bc7c4",
+    "remastered/xw_ex_5010.wpn/-4310.dds": "87a118af57aa1050ef179e3c56ed807946e66e3450b2f52c0b06098aacade0d6",
+    "remastered/xw_ex_5010.se/se011018.win32.scd": "b09d94263ffea062012f59c9393910d4f356500c2a334dbc3f762cbebb0a52b6",
+    "remastered/xw_ex_5010.se/se011019.win32.scd": "89b736b3f2e74f45a043465f6938c2c01268e318f85a1db44f47135326c5db80",
+    "remastered/xw_ex_5010.se/se011020.win32.scd": "d108dabbd912a97802f324867109cf5f70504d41dd3a107f0eeaa93b6d2981f8",
+    "remastered/xw_ex_5010.se/se011021.win32.scd": "1236061c066375985b7f0bfc65872fef8888291f1d14103c30f9987d6c424524",
+    "remastered/xw_ex_5010.se/se011022.win32.scd": "b09d94263ffea062012f59c9393910d4f356500c2a334dbc3f762cbebb0a52b6"
+  }
+}
