@@ -2,7 +2,7 @@
 
 ![Keyblade of Heart model and dark blue swing trail in gameplay](images/banner.gif)
 
-[Download](https://github.com/ROXASBrandon/KH1FM-Keyblade-of-Heart/releases/latest) · [Report a bug](https://github.com/ROXASBrandon/KH1FM-Keyblade-of-Heart/issues)
+[Download on Nexus Mods](https://www.nexusmods.com/kingdomheartsfinalmix/mods/261) · [GitHub Release](https://github.com/ROXASBrandon/KH1FM-Keyblade-of-Heart/releases/latest) · [Report a bug](https://github.com/ROXASBrandon/KH1FM-Keyblade-of-Heart/issues)
 
 Replace Kingdom Key with Riku's **Keyblade of Heart**, featuring its authentic model, dark blue swing trail, and sword swing sounds. Sora keeps his normal animations, while Kingdom Key keeps its stats and abilities.
 
@@ -35,7 +35,7 @@ Choose **one** method below. Close Kingdom Hearts normally before installing or 
 
 ### OpenKH Mods Manager — downloaded ZIP
 
-1. Download the mod ZIP from the **Files** tab on its Nexus Mods page or from [GitHub Releases](https://github.com/ROXASBrandon/KH1FM-Keyblade-of-Heart/releases/latest).
+1. Download the mod ZIP from the **Files** tab on [Nexus Mods](https://www.nexusmods.com/kingdomheartsfinalmix/mods/261) or from [GitHub Releases](https://github.com/ROXASBrandon/KH1FM-Keyblade-of-Heart/releases/latest).
 2. Open **OpenKH Mods Manager** and select **Kingdom Hearts 1**.
 3. Open **Mods > Install new mods** or click **+**.
 4. Choose **Select and install Mod Archive or Lua Script**, then select the downloaded ZIP **without extracting it**.
