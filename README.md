@@ -21,17 +21,33 @@ Equip Kingdom Key to use the replacement. When using Transmog, select the Kingdo
 
 Kingdom Hearts Final Mix on Steam and OpenKH Mods Manager with Panacea. This mod alone does not require LuaBackend.
 
-## Installation
+## Installation methods
 
-1. Download the mod ZIP from [Releases](https://github.com/ROXASBrandon/KH1FM-Keyblade-of-Heart/releases/latest).
-2. Close Kingdom Hearts normally.
-3. Select **Kingdom Hearts 1** in OpenKH Mods Manager.
-4. Open **Mods > Install new mods** or click **+**, choose **Select and install Mod Archive or Lua Script**, and select the downloaded ZIP without extracting it.
-5. Enable **Keyblade of Heart over Kingdom Key**, then click **Build and Run**.
-6. Equip **Kingdom Key**.
+Choose **one** method below. Close Kingdom Hearts normally before installing or updating, and keep only one copy of this mod enabled.
 
-For updates, close the game, remove the previous imported copy, import the new ZIP, and rebuild. Keep one copy enabled.
+### OpenKH Mods Manager — GitHub
 
+1. Open **OpenKH Mods Manager** and select **Kingdom Hearts 1**.
+2. Open **Mods > Install new mods** or click **+**.
+3. Enter `ROXASBrandon/KH1FM-Keyblade-of-Heart` in the GitHub field.
+4. Click **Install**, then enable **Keyblade of Heart over Kingdom Key**.
+5. Click **Mod Loader > Build and Run**.
+
+### OpenKH Mods Manager — downloaded ZIP
+
+1. Download the mod ZIP from the **Files** tab on its Nexus Mods page or from [GitHub Releases](https://github.com/ROXASBrandon/KH1FM-Keyblade-of-Heart/releases/latest).
+2. Open **OpenKH Mods Manager** and select **Kingdom Hearts 1**.
+3. Open **Mods > Install new mods** or click **+**.
+4. Choose **Select and install Mod Archive or Lua Script**, then select the downloaded ZIP **without extracting it**.
+5. Enable **Keyblade of Heart over Kingdom Key**, then click **Mod Loader > Build and Run**.
+
+Equip **Kingdom Key** in-game.
+
+### Updating
+
+For a GitHub installation, close the game, use **Settings > Check Mods for Updates**, then rebuild and restart. For a ZIP installation, close the game, remove the previous imported copy, import the new ZIP, and rebuild.
+
+[OpenKH installation guide](https://github.com/OpenKH/OpenKh/blob/master/docs/tool/GUI.ModsManager/index.md#installing-mods).
 ## Notes
 
 The inventory name remains Kingdom Key. Sora's moveset, attack timing, and normal impact/guard sounds stay unchanged. The trail follows Sora's swings; this does not add Riku's boss moveset. Other mods replacing the same Kingdom Key assets can overwrite this replacement.
